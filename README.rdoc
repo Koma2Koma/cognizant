@@ -1,0 +1,78 @@
+-=-=-=-=-=-=-=-=-=- Overview =-=-=-=-=-=-=-=-=-=-=-=
+
+Cognizant [consumer, citizen, human]
+
+A site dedicated to ideas for enhancing and promoting conscientious living...
+
+
+categories:
+  - zero waste
+    - personal kits
+  - travel
+    - train 
+    -ride-share
+  - socially responsibility
+  - dietary choices
+    - vegetarian
+    - free range
+    - local
+    - legal meanings of free-range, cage-free, natural flavoring, vegetarian fed, organic, natural etc.
+  - energy usage
+    - dish washing
+    - clothes washing
+  - resource usage
+    - bathing habits
+    - clothing choices
+    - reusing items
+  - democratic/political action
+    - how to effectively promote conscientiousness
+    - where you spend your money
+  - morality without pompous dickishness
+    - Open Judgement of others is counterproductive
+    - psychology of Karma credit
+    - openness with my own judgemental struggles
+
+
+features:
+  - videos
+  - links
+  - idea sharing
+
+
+Products:
+  - conscious kits
+
+
+
+
+
+=============== README ===============
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+
