@@ -20,6 +20,7 @@ categories:
   - energy usage
     - dish washing
     - clothes washing
+    - solar/wind
   - resource usage
     - bathing habits
     - clothing choices
@@ -31,6 +32,8 @@ categories:
     - Open Judgement of others is counterproductive
     - psychology of Karma credit
     - openness with my own judgemental struggles
+  - architecting your life for more cognizant living
+    
 
 
 features:
