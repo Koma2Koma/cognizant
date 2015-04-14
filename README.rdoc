@@ -32,8 +32,9 @@ categories:
     - Open Judgement of others is counterproductive
     - psychology of Karma credit
     - openness with my own judgemental struggles
+  - understanding moral motivations as a guide to influencing others
   - architecting your life for more cognizant living
-    
+
 
 
 features:
