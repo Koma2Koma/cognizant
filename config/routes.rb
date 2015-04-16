@@ -2,19 +2,31 @@ Rails.application.routes.draw do
 
 
   
-  get 'categories/edit'
+  get 'ideas/show'
 
-  get 'categories/update'
+  get 'ideas/index'
 
-  get 'categories/travel'
+  get 'ideas/new'
 
-  get 'categories/waste'
+  get 'ideas/edit'
 
-  get 'categories/energy'
+  # get 'categories/edit'
+
+  # get 'categories/update'
+
+  # get 'categories/travel'
+
+  # get 'categories/waste'
+
+  # get 'categories/energy'
 
   get 'home' => 'static_pages#home', as: :home
 
   get 'about' => 'static_pages#about', as: :about
+
+  resources :categories do 
+    resources :ideas
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
