@@ -16,3 +16,33 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+
+}
+//////   Logo ////////
+.logo {
+  text-align: center;
+}
+
+.top-left-logo {
+  float: left;
+  margin-top: -40px;
+}
+
+
+//////   About Page /////////
+.home-title {
+  text-align: center;
+  font-size: 4em;
+}
+
+.home-subtitle {
+  text-align: center;
+}
+
+.home-body {
+  text-align: center;
+  max-width: 50%;
+  margin-left: 25%;
+}
