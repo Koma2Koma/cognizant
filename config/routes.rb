@@ -2,6 +2,16 @@ Rails.application.routes.draw do
 
 
   
+  get 'categories/edit'
+
+  get 'categories/update'
+
+  get 'categories/travel'
+
+  get 'categories/waste'
+
+  get 'categories/energy'
+
   get 'home' => 'static_pages#home', as: :home
 
   get 'about' => 'static_pages#about', as: :about
