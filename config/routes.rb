@@ -1,25 +1,6 @@
 Rails.application.routes.draw do
 
 
-  
-  get 'ideas/show'
-
-  get 'ideas/index'
-
-  get 'ideas/new'
-
-  get 'ideas/edit'
-
-  # get 'categories/edit'
-
-  # get 'categories/update'
-
-  # get 'categories/travel'
-
-  # get 'categories/waste'
-
-  # get 'categories/energy'
-
   get 'home' => 'static_pages#home', as: :home
 
   get 'about' => 'static_pages#about', as: :about

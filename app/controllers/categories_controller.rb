@@ -5,12 +5,8 @@ class CategoriesController < ApplicationController
   def update
   end
 
-  def travel
-  end
-
-  def waste
-  end
-
-  def energy
+  def show
+    @category = Category.find(params[:id])
+    @ideas = @category.ideas
   end
 end
