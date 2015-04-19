@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <% if @category %>
+      <% if @category && @category.title != nil %>
         <% category = @category.title %>
         <% title = 'Cognizant [ ' + category.downcase + ' ]' %>
         <%= link_to title, home_path, class: 'navbar-brand' %>
