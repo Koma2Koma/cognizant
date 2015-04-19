@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_category
-  before_action :set_idea, except: [:index, :new]
+  before_action :set_idea, except: [:index, :new, :create]
 
 
   def show
@@ -10,6 +10,21 @@ class IdeasController < ApplicationController
   end
 
   def new
+    @idea = Idea.new
+  end
+
+  def create
+    @idea = Idea.create(idea_params)
+
+    respond_to do |format|
+      if @idea.save
+        format.html { redirect_to [@category, @idea], notice: 'Idea successfully created.' }
+        format.json { render :show, status: :created, location: @idea}
+      else
+        format.html { render :new }
+        format.json { render json: @idea.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit

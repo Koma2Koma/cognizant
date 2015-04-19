@@ -1,2 +1,10 @@
-<h1><%=</h1>
-<p>Find me in app/views/ideas/new.html.erb</p>
+<h1><%= @category.title %> [ new idea ]</h1>
+
+
+<h3>Add New Idea</h3>
+
+<%= bootstrap_form_for [@category, @idea] do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
