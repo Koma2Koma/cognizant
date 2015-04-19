@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  root to: 'static_pages#home'
 
+  devise_for :users
   
   get 'home' => 'static_pages#home', as: :home
 
   get 'about' => 'static_pages#about', as: :about
+
+  resources :categories do 
+    resources :ideas
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
