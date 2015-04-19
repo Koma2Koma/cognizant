@@ -13,7 +13,10 @@
 <% if @ideas.any? %>
   <ul>
     <% @ideas.each do |idea| %>
-      <li><strong><%= idea.title %></strong> <%= link_to 'edit', edit_category_idea_path(@category, idea) %> <%= link_to 'delete', category_idea_path(@category, idea), method: :delete %></li>
+      <li><strong><%= idea.title %></strong>
+        <%= link_to 'view', category_idea_path(@category, idea) %> 
+        <%= link_to 'edit', edit_category_idea_path(@category, idea) %> 
+        <%= link_to 'delete', category_idea_path(@category, idea), method: :delete %></li>
         <ul>
           <li>Created: <%= idea.created_at %></li>
           <li>Last Update: <%= idea.updated_at %></li>
