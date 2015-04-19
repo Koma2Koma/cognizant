@@ -1,7 +1,19 @@
 <% if current_user %>
-  <h1><%= link_to 'Edit Category', edit_category_path(@category) %></h1>
+  <h3 class='admin-only'><%= link_to 'Edit Category', edit_category_path(@category), class: 'edit-link'%></h3>
 <% end %>
 
 <h1><%= @category.title %></h1>
 <p><%= @category.description %></p>
 
+<div class='container'>
+  <% if @ideas.any? %>
+    <ul>
+      <% @ideas.each do |idea| %>
+        <li><%= idea.title %></li>
+          <ul>
+            <li><%= idea.description %></li>
+          </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
