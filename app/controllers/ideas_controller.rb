@@ -15,6 +15,7 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.create(idea_params)
+    @idea[:category_id] = @category.id
 
     respond_to do |format|
       if @idea.save
