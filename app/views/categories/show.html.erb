@@ -5,11 +5,13 @@
 <h1><%= @category.title %></h1>
 <p><%= @category.description %></p>
 
+<h4>Add intro videos for each category... Maybe</h4>
+
 <div class='container'>
   <% if @ideas.any? %>
     <ul>
       <% @ideas.each do |idea| %>
-        <li><%= idea.title %></li>
+        <li><strong><%= link_to idea.title, category_idea_path(@category, idea) %></strong></li>
           <ul>
             <li><%= idea.description %></li>
           </ul>
