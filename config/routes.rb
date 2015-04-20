@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'topics/new'
+
+  get 'topics/edit'
+
+  get 'topics/show'
+
+  get 'topics/index'
+
   root to: 'static_pages#home'
 
   devise_for :users
