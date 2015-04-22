@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, except: [:new, :create, :index]
+  before_action :set_topics, except: [:update, :new, :create, :index]
   before_action :set_ideas, except: [:new, :create, :index]
 
   def index
@@ -47,6 +48,10 @@ class CategoriesController < ApplicationController
 
     def set_ideas
       @ideas = @category.ideas
+    end
+
+    def set_topics
+      @topics = @category.topics
     end
 
     def category_params
