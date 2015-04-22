@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :destroy]
   before_action :set_category, only: [:destroy, :new, :create]
+  before_action :set_ideas, only: [:show, :edit]
   
   def new
     @topic = Topic.new(category_id: params[:category_id])
@@ -41,6 +42,10 @@ class TopicsController < ApplicationController
 
     def set_topic
       @topic = Topic.find(params[:id])
+    end
+
+    def set_ideas
+      @ideas = Idea.where(topic_id: params[:id])
     end
 
     def topic_params

@@ -1,2 +1,7 @@
+<% if current_user %>
+  <h3 class='admin-only'><%= link_to 'Edit Topic', edit_topic_path(@topic), class: 'edit-link'%></h3>
+<% end %>
+
 <h1><%= @topic.title %></h1>
 <p><%= @topic.description %></p>
+
