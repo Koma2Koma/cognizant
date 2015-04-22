@@ -38,6 +38,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    
   end
 
   private

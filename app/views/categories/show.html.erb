@@ -8,6 +8,19 @@
 <h4>Add intro videos for each category... Maybe</h4>
 
 <div class='container'>
+  <% if @topics.any? %>
+    <ul>
+      <% @topics.each do |topic| %>
+        <li><strong><%= link_to topic.title, topic_path(topic) %></strong></li>
+          <ul>
+            <li><%= topic.description %></li>
+          </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class='container'>
   <% if @ideas.any? %>
     <ul>
       <% @ideas.each do |idea| %>
