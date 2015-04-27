@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :destroy]
+  before_action :set_topic, only: [:show, :destroy, :edit, :update]
   before_action :set_category, only: [:destroy, :new, :create]
   before_action :set_ideas, only: [:show, :edit]
   
@@ -23,6 +23,16 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    @category = Category.find(@topic.category_id)
+  end
+
+  def update
+    if @topic.update(topic_params)
+      redirect_to topic_path(@topic)
+    else
+      flash[:alert] = 'Save Failed'
+      redirect_to edit_topic_path(@topic)
+    end
   end
 
   def show
