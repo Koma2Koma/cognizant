@@ -5,3 +5,20 @@
 <h1><%= @topic.title %></h1>
 <p><%= @topic.description %></p>
 
+
+<% if current_user %>
+  <h3 class='admin-only'><%= link_to 'New Idea', new_topic_idea_path(@topic), class: 'edit-link'%></h3>
+<% end %>
+
+<div class='container'>
+  <% if @ideas.any? %>
+    <ul>
+      <% @ideas.each do |idea| %>
+        <li><strong><%= link_to idea.title, idea_path(idea) %></strong></li>
+          <ul>
+            <li><%= idea.description %></li>
+          </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
