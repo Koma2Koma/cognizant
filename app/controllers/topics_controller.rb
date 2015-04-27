@@ -26,6 +26,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @category = Category.find(@topic.category_id)
   end
 
   def index

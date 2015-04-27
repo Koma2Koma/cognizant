@@ -1,5 +1,4 @@
 class IdeasController < ApplicationController
-  #before_action :set_category, except: [:new, :create]
   before_action :set_topic, except: [:show, :edit, :update]
   before_action :set_idea, except: [:index, :new, :create]
 
@@ -47,11 +46,6 @@ class IdeasController < ApplicationController
   end
 
   private
-
-    ######## Maybe delete
-    def set_category
-      @category = Category.find(params[:category_id])
-    end
 
     def set_topic
       @topic = Topic.find(params[:topic_id])

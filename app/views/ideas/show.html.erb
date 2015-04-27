@@ -3,7 +3,7 @@
 <% end %>
 
 
-<h1><strong><%= @category.title %></strong></h1>
-<h2><strong><%= @topic.title %></strong></h2>
+<h1><strong><%= link_to @category.title, category_path(@category) %></strong></h1>
+<h2><strong><%= link_to @topic.title, topic_path(@topic) %></strong></h2>
 <h4><%= @idea.title %></h4>
 <p><%= @idea.description %></p>
