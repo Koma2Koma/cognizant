@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   #before_action :set_category, except: [:new, :create]
-  before_action :set_topic, except: :show
+  before_action :set_topic, except: [:show, :edit, :update]
   before_action :set_idea, except: [:index, :new, :create]
 
 
@@ -33,14 +33,16 @@ class IdeasController < ApplicationController
   end
 
   def edit
+    @topic = Topic.find(@idea.topic_id)
+    @category = Category.find(@topic.category_id)
   end
 
   def update
     if @idea.update(idea_params)
-      redirect_to category_idea_path(@category, @idea)
+      redirect_to idea_path(@idea)
     else
       flash[:alert] = 'Save Failed'
-      redirect_to edit_category_idea_path(@category, @idea)
+      redirect_to edit_idea_path(@idea)
     end
   end
 
