@@ -5,17 +5,22 @@
 <h1><%= @category.title %></h1>
 <p><%= @category.description %></p>
 
+<% if current_user %>
+  <h3 class='admin-only'><%= link_to 'New Topic', new_category_topic_path(@category), class: 'edit-link'%></h3>
+<% end %>
+
 <h4>Add intro videos for each category... Maybe</h4>
 
 <div class='container'>
-  <% if @ideas.any? %>
+  <% if @topics.any? %>
     <ul>
-      <% @ideas.each do |idea| %>
-        <li><strong><%= link_to idea.title, category_idea_path(@category, idea) %></strong></li>
+      <% @topics.each do |topic| %>
+        <li><strong><%= link_to topic.title, topic_path(topic) %></strong></li>
           <ul>
-            <li><%= idea.description %></li>
+            <li><%= topic.description %></li>
           </ul>
       <% end %>
     </ul>
   <% end %>
 </div>
+

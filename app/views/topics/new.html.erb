@@ -1,0 +1,7 @@
+<h1>Add a New Topic</h1>
+
+<%= bootstrap_form_for [@category, @topic] do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>

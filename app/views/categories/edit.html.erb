@@ -6,21 +6,23 @@
   <%= f.submit %>
 <% end %>
 
-<h2>Ideas</h2>
+<h2>Topics</h2>
 
-<h3><%= link_to 'Add New Idea', new_category_idea_path(@category) %></h3>
+<h3><%= link_to 'Add New Topic', new_category_topic_path(@category) %></h3>
   
-<% if @ideas.any? %>
+<% if @topics.any? %>
   <ul>
-    <% @ideas.each do |idea| %>
-      <li><strong><%= idea.title %></strong>
-        <%= link_to 'view', category_idea_path(@category, idea) %> 
-        <%= link_to 'edit', edit_category_idea_path(@category, idea) %> 
-        <%= link_to 'delete', category_idea_path(@category, idea), method: :delete %></li>
+    <% @topics.each do |topic| %>
+      <li><strong><%= topic.title %></strong>
+        <%= link_to 'view', topic_path(topic) %> 
+        <%= link_to 'edit', edit_topic_path(topic) %> 
+        <%= link_to 'delete', topic_path(topic), method: :delete %>
+      </li>
         <ul>
-          <li>Created: <%= idea.created_at %></li>
-          <li>Last Update: <%= idea.updated_at %></li>
+          <li>Created: <%= topic.created_at %></li>
+          <li>Last Update: <%= topic.updated_at %></li>
         </ul>
     <% end %>
   </ul>
 <% end %>
+

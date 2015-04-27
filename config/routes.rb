@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'topics/new'
+
+  get 'topics/edit'
+
+  get 'topics/show'
+
+  get 'topics/index'
+
   root to: 'static_pages#home'
 
   devise_for :users
@@ -8,8 +16,10 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about', as: :about
 
-  resources :categories do 
-    resources :ideas
+  resources :categories, shallow: true do
+    resources :topics do
+      resources :ideas
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
