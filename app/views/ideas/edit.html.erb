@@ -1,6 +1,8 @@
 <h1><strong><%= @category.title %></strong> [ <%= @topic.title %> ]</h1>
 <p><%= @topic.description %></p>
 
+<h1>Edit Idea</h1>
+
 <%= bootstrap_nested_form_for [@idea] do |f| %>
   <%= f.text_field :title %>
   <%= f.text_field :description %>

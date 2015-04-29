@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :destroy, :edit, :update]
-  before_action :set_category, only: [:destroy, :new, :create]
+  before_action :set_category, only: [:new, :create]
   before_action :set_ideas, only: [:show, :edit]
   
   def new
@@ -43,6 +43,13 @@ class TopicsController < ApplicationController
   end
 
   def destroy
+    if @topic.destroy
+      flash[:notice] = 'Topic deleted.'
+      redirect_to edit_category_path(@topic.category_id)
+    else
+      flast[:alert] = 'Delete failed.'
+      redirect_to edit_category_path(@topic.category_id)
+    end
   end
 
   private
