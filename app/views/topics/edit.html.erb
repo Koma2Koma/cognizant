@@ -5,3 +5,23 @@
   <%= f.text_field :description %>
   <%= f.submit %>
 <% end %>
+
+
+<h2>Ideas</h2>
+
+<div class='container'>
+  <% if @ideas.any? %>
+    <ul>
+      <% @ideas.each do |idea| %>
+        <li><strong><%= idea.title %></strong> &nbsp 
+          <%= link_to 'view', idea_path(idea) %> &nbsp 
+          <%= link_to 'edit', edit_idea_path(idea) %> &nbsp 
+          <%= link_to 'delete', idea_path(idea), method: :delete %> 
+        </li>
+          <ul>
+            <li><%= idea.description %></li>
+          </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
