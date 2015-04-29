@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_topic, except: [:show, :edit, :update]
+  before_action :set_topic, except: [:show, :edit, :update, :destroy]
   before_action :set_idea, except: [:index, :new, :create]
 
 
@@ -38,10 +38,21 @@ class IdeasController < ApplicationController
 
   def update
     if @idea.update(idea_params)
+      flash[:notice] = 'Update successfull.'
       redirect_to idea_path(@idea)
     else
       flash[:alert] = 'Save Failed'
       redirect_to edit_idea_path(@idea)
+    end
+  end
+
+  def destroy
+    if @idea.destroy
+      flash[:notice] = 'Idea deleted.'
+      redirect_to edit_topic_path(@idea.topic_id)
+    else
+      flash[:alert] = 'Idea failed to delete.'
+      redirect_to edit_topic_path(@idea.topic_id)
     end
   end
 
