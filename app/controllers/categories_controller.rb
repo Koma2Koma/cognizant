@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   before_action :set_ideas, except: [:new, :create, :index]
 
   def index
-    @categories = Category.all
+    # @categories set in the application controller for the dropdown in the navbar
   end
 
   def edit
